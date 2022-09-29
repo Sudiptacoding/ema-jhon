@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import fakeData from '../../fakeData/products.json';
+import { addToDb } from '../../utilities/fakedb';
 import Card from '../Card/Card';
 import Product from '../Product/Product';
 import './Shop.css'
@@ -12,6 +13,7 @@ const Shop = () => {
     const hendelAllProduct = (props)=>{
         const newCart = [...cart ,props];
         setCart(newCart);
+        addToDb(props.key);
 
 
     }
@@ -21,7 +23,7 @@ const Shop = () => {
             <div className="shop-product">                
                 {
                    
-                    fakeData10.map(product => <Product hendelAllProduct={hendelAllProduct} Product={product}></Product>)
+                    fakeData10.map(product => <Product key={product.key} showAddToCart={true} hendelAllProduct={hendelAllProduct} Product={product}></Product>)
                 }
             </div>
             <div className="shop-order">
