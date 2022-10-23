@@ -19,8 +19,7 @@ function App() {
         <Route path='/review'  element={ <Review></Review>} > </Route>
         <Route path='/manage'  element={<Inventori></Inventori>} > </Route>
         <Route path='/'  element={ <Shop></Shop>} > </Route>
-        <Route path='/product/:productkey'  element={ <ProductDetail></ProductDetail>} > </Route>
-        
+        <Route path='/product/:productkey'  element={ <ProductDetail></ProductDetail>} > </Route>        
         <Route path='*'  element={ <PageError></PageError>} > </Route>
 
       </Routes>
